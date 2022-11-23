@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Main {
     //----------------------------------------------------------------------
     // FIFO - First-in First-out
+    // SUB FIFO
     public static int FindsubFIFO(ArrayList<FrameM> memoria){
         int minNum = memoria.get(0).getTempCarga();
         for (FrameM i: memoria) {
@@ -20,6 +21,8 @@ public class Main {
 
         return ID;
     }
+    
+    // FIFO - First-in First-out
     public static ArrayList<FrameM> FIFO(ArrayList<FrameM> frames, int limPag){
         System.out.println("FIFO");
         ArrayList<FrameM> memoria = new ArrayList<>();
@@ -56,6 +59,7 @@ public class Main {
 
     //----------------------------------------------------------------------
     // LFU - Least-Frequently-Used
+    // SUB LFU
     public static int FindsubLFU(ArrayList<FrameM> memoria){
         int minNum = memoria.get(0).getQuanRef();
         for (FrameM i: memoria) {
@@ -72,6 +76,8 @@ public class Main {
         }
         return ID;
     }
+    
+    // LFU - Least-Frequently-Used
     public static ArrayList<FrameM> LFU(ArrayList<FrameM> frames, int limPag){
         System.out.println("LFU");
         ArrayList<FrameM> memoria = new ArrayList<>();
@@ -105,6 +111,7 @@ public class Main {
 
     //----------------------------------------------------------------------
     // LRU - Least-Recently-Used
+    // SUB LRU
     public static int FindsubLRU(ArrayList<FrameM> memoria){
         int minNum = memoria.get(0).getTempo_UltRef();
         for (FrameM i: memoria) {
@@ -121,6 +128,8 @@ public class Main {
         }
         return ID;
     }
+    
+    // LRU - Least-Recently-Used
     public static ArrayList<FrameM> LRU(ArrayList<FrameM> frames, int limPag){
         System.out.println("LRU");
         ArrayList<FrameM> memoria = new ArrayList<>();
@@ -159,6 +168,7 @@ public class Main {
 
     //----------------------------------------------------------------------
     // NRU - Not-Recently-Used
+    // SUB NRU
     public static int FindsubNRU(ArrayList<FrameM> memoria){
         int ID = 0;
         boolean b0b0 = false;
@@ -178,6 +188,8 @@ public class Main {
         }
         return ID;
     }
+    
+    // NRU - Not-Recently-Used
     public static ArrayList<FrameM> NRU(ArrayList<FrameM> frames, int limPag){
         System.out.println("NRU");
         ArrayList<FrameM> memoria = new ArrayList<>();
