@@ -224,29 +224,29 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<FrameM> frames = new ArrayList<>();
         int limPag = 4;
-        FrameM f1 = new FrameM(1,10,0,0);
+        FrameM f1 = new FrameM(1,13,0,0);
         FrameM f2 = new FrameM(2,1,1,1);
         FrameM f3 = new FrameM(3,2,1,0);
         FrameM f4 = new FrameM(4,11,0,1);
         FrameM f5 = new FrameM(5,21,0,0);
         FrameM f6 = new FrameM(6,26,1,1);
-        FrameM f7 = new FrameM(7,15,1,0);
+        FrameM f7 = new FrameM(7,16,1,0);
         FrameM f8 = new FrameM(8,12,0,1);
-        frames.add(f1);
         frames.add(f2);
-        frames.add(f3);
-        frames.add(f4);
-        frames.add(f5);
         frames.add(f6);
-        frames.add(f7);
+        frames.add(f4);
         frames.add(f8);
         frames.add(f3);
-        frames.add(f4);
+        frames.add(f7);
+        frames.add(f1);
+        frames.add(f5);
+        frames.add(f6);
+        frames.add(f8);
         System.out.println("Frames: " + frames);
 
-        //FIFO(frames,4);
-        //LFU(frames,6);
-        //LRU(frames,6);
-        NRU(frames,4);
+        FIFO(frames,4);
+        LFU(frames,5);
+        LRU(frames,6);
+        NRU(frames,6);
     }
 }
