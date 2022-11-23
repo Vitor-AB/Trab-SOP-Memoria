@@ -7,11 +7,9 @@ public class FrameM {
     private int BR;
     private int BM;
 
-    public FrameM(int ID, int quanRef, int tempo_UltRef, int BR, int BM) {
+    public FrameM(int ID, int quanRef, int BR, int BM) {
         this.ID = ID;
-
         this.quanRef = quanRef;
-        this.tempo_UltRef = tempo_UltRef;
         this.BR = BR;
         this.BM = BM;
     }
@@ -66,6 +64,6 @@ public class FrameM {
 
     @Override
     public String toString(){
-        return ID + " ";
+        return ID + "";
     }
 }
