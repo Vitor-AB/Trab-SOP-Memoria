@@ -21,6 +21,7 @@ public class Main {
         return ID;
     }
     public static ArrayList<FrameM> FIFO(ArrayList<FrameM> frames, int limPag){
+        System.out.println("FIFO");
         ArrayList<FrameM> memoria = new ArrayList<>();
         int aux = 1;
         for (FrameM i: frames){
@@ -47,9 +48,9 @@ public class Main {
                     }
                 }
             }
+            System.out.println("Memoria: " +memoria);
         }
         aux += 1;
-        System.out.println("Memoria: " +memoria);
         return memoria;
     }
 
@@ -72,6 +73,7 @@ public class Main {
         return ID;
     }
     public static ArrayList<FrameM> LFU(ArrayList<FrameM> frames, int limPag){
+        System.out.println("LFU");
         ArrayList<FrameM> memoria = new ArrayList<>();
         for (FrameM i: frames) {
             boolean namemo = false;
@@ -120,6 +122,7 @@ public class Main {
         return ID;
     }
     public static ArrayList<FrameM> LRU(ArrayList<FrameM> frames, int limPag){
+        System.out.println("LRU");
         ArrayList<FrameM> memoria = new ArrayList<>();
         int aux = 1;
         for (FrameM i: frames) {
@@ -157,42 +160,26 @@ public class Main {
     //----------------------------------------------------------------------
     // NRU - Not-Recently-Used
     public static int FindsubNRU(ArrayList<FrameM> memoria){
-        ArrayList[] aux = new ArrayList<>[4];
-        int BR;
-        int BM;
-        int numMai = 0;
         int ID = 0;
-        for (int i = 0; i < aux.length; i++) {
-            aux[i] = new ArrayList<Integer>();
-        }
-        for (int i = 0; i < memoria.size(); i++) {
-            if (memoria.get(i).getBR() == 0 && memoria.get(i).getBM() == 0) {
-                aux[i].add(memoria.get(i).getID());
-                aux[i].add(4);
+        boolean b0b0 = false;
+        boolean b0b1 = false;
+        for(FrameM i: memoria){
+            if (i.getBR() == 0 && i.getBM() == 0){
+                ID = i.getID();
+                b0b0 = true;
             }
-            if (memoria.get(i).getBR() == 0 && memoria.get(i).getBM() == 1) {
-                aux[i].add(memoria.get(i).getID());
-                aux[i].add(3);
+            if (i.getBR() == 0 && i.getBM() == 1 && !b0b0){
+                ID = i.getID();
+                b0b1 = true;
             }
-            if (memoria.get(i).getBR() == 1 && memoria.get(i).getBM() == 0) {
-                aux[i].add(memoria.get(i).getID());
-                aux[i].add(2);
-            }
-            if (memoria.get(i).getBR() == 1 && memoria.get(i).getBM() == 1) {
-                aux[i].add(memoria.get(i).getID());
-                aux[i].add(1);
+            if(!b0b0 && !b0b1){ 
+                ID = i.getID();
             }
         }
-        for (int i = 0; i < memoria.size(); i++) {
-            if (numMai < aux[i].get(1)){
-
-            }
-        }
-
-
         return ID;
     }
     public static ArrayList<FrameM> NRU(ArrayList<FrameM> frames, int limPag){
+        System.out.println("NRU");
         ArrayList<FrameM> memoria = new ArrayList<>();
         for (FrameM i: frames) {
             boolean namemo = false;
@@ -220,7 +207,7 @@ public class Main {
         }
         return memoria;
     }
-
+    
 
     public static void main(String[] args) {
         ArrayList<FrameM> frames = new ArrayList<>();
