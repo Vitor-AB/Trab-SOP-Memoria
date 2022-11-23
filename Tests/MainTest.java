@@ -160,9 +160,9 @@ class MainTest {
 
         ArrayList<FrameM> memoria = new ArrayList<>();
         memoria.add(f6);
-        memoria.add(f4);
         memoria.add(f8);
         memoria.add(f7);
+        memoria.add(f1);
         memoria.add(f5);
         System.out.println(memoria);
         assertEquals(memoria, Main.LFU(test,5));
@@ -322,9 +322,9 @@ class MainTest {
         test.add(f4);
 
         ArrayList<FrameM> memoria = new ArrayList<>();
-        memoria.add(f7);
-        memoria.add(f8);
+        memoria.add(f2);
         memoria.add(f3);
+        memoria.add(f6);
         memoria.add(f4);
         System.out.println(memoria);
         assertEquals(memoria, Main.NRU(test,4));
@@ -353,10 +353,10 @@ class MainTest {
         test.add(f8);
 
         ArrayList<FrameM> memoria = new ArrayList<>();
-        memoria.add(f7);
-        memoria.add(f1);
-        memoria.add(f5);
+        memoria.add(f2);
         memoria.add(f6);
+        memoria.add(f3);
+        memoria.add(f7);
         memoria.add(f8);
         System.out.println(memoria);
         assertEquals(memoria, Main.NRU(test,5));
@@ -384,7 +384,7 @@ class MainTest {
         test.add(f4);
 
         ArrayList<FrameM> memoria = new ArrayList<>();
-        memoria.add(f1);
+        memoria.add(f3);
         memoria.add(f6);
         memoria.add(f8);
         memoria.add(f7);
