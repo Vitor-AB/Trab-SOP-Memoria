@@ -1,5 +1,3 @@
-import algSubstituicao.FIFO;
-
 import java.util.ArrayList;
 
 public class Main {
